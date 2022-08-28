@@ -1,0 +1,1 @@
+cmd_/home/lmx/nanopi/MyDriver/01_chrdevbase/chrdevbase.ko := arm-linux-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/lmx/nanopi/MyDriver/01_chrdevbase/chrdevbase.ko /home/lmx/nanopi/MyDriver/01_chrdevbase/chrdevbase.o /home/lmx/nanopi/MyDriver/01_chrdevbase/chrdevbase.mod.o ;  true

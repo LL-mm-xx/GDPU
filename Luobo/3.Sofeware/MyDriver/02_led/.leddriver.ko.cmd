@@ -1,0 +1,1 @@
+cmd_/home/lmx/nanopi/MyDriver/02_led/leddriver.ko := arm-linux-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/lmx/nanopi/MyDriver/02_led/leddriver.ko /home/lmx/nanopi/MyDriver/02_led/leddriver.o /home/lmx/nanopi/MyDriver/02_led/leddriver.mod.o ;  true

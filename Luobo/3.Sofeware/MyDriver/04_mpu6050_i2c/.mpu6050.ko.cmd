@@ -1,0 +1,1 @@
+cmd_/home/lmx/nanopi/MyDriver/04_mpu6050_i2c/mpu6050.ko := arm-linux-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/lmx/nanopi/MyDriver/04_mpu6050_i2c/mpu6050.ko /home/lmx/nanopi/MyDriver/04_mpu6050_i2c/mpu6050.o /home/lmx/nanopi/MyDriver/04_mpu6050_i2c/mpu6050.mod.o ;  true

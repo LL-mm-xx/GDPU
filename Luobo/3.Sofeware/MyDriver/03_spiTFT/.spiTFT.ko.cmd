@@ -1,0 +1,1 @@
+cmd_/home/lmx/nanopi/MyDriver/03_spiTFT/spiTFT.ko := arm-linux-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/lmx/nanopi/MyDriver/03_spiTFT/spiTFT.ko /home/lmx/nanopi/MyDriver/03_spiTFT/spiTFT.o /home/lmx/nanopi/MyDriver/03_spiTFT/spiTFT.mod.o ;  true
