@@ -82,7 +82,7 @@ image文件夹里是一些APP的页面截图和下位机的实物图。
 
 低头动作**经过**滑动均值滤波的数据（加速度）：
 
-![image-20220829091443138](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829091443138.png)
+![image-20220829091443138](README.assets/image-20220829091443138.png)
 
 - **去除重力加速度**
 
@@ -92,11 +92,11 @@ image文件夹里是一些APP的页面截图和下位机的实物图。
 
 低头动作**未去除**重力加速度处理效果：
 
-![image-20220829091729857](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829091729857.png)
+![image-20220829091729857](README.assets/image-20220829091729857.png)
 
 低头动作**去除**重力加速度处理效果：
 
-![image-20220829091733979](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829091733979.png)
+![image-20220829091733979](README.assets/image-20220829091733979.png)
 
 > 可以看到去除重力加速度后 x、y、z 轴三轴加速度起始和结束都基本趋近于 0，比较有利于去除摆放倾斜或加速度计本身的干扰。
 
@@ -104,17 +104,17 @@ image文件夹里是一些APP的页面截图和下位机的实物图。
 
 连续低头动作（加速度）：
 
-![image-20220829091918814](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829091918814.png)
+![image-20220829091918814](README.assets/image-20220829091918814.png)
 
 连续低头动作（角速度）：
 
-![image-20220829091922884](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829091922884.png)
+![image-20220829091922884](README.assets/image-20220829091922884.png)
 
 ##### 2.1.2.4 数据切割
 
 在上述数据处理过程中，注意到数据是随时间连续变化的，时间上相邻的数据具有较强的相关性。为了充分考虑两段相邻时间数据的相关性，以3s为一个数据，一条数据为15s，以50%重叠率对数据进行切割，即一条数据可切割成9个数据。数据切割如图所示。
 
-![image-20220829092100707](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829092100707.png)
+![image-20220829092100707](README.assets/image-20220829092100707.png)
 
 ##### 2.1.2.5 特征值的选取
 
@@ -130,7 +130,7 @@ image文件夹里是一些APP的页面截图和下位机的实物图。
 
 方差选择法的结果如表格所示。由表格可得，最大值、最小值、均值、标准差、能量度量以及时域信号的偏度的方差较大，有较好的分类效果。考虑到STM32上实现特征提取函数的复杂度，最终决定选取最大值、最小值、均值、标准差、能量度量五种特征值。
 
-![image-20220829092251586](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829092251586.png)
+![image-20220829092251586](README.assets/image-20220829092251586.png)
 
 #### 2.1.3 颈椎病预防动作识别算法研究
 
@@ -138,19 +138,19 @@ image文件夹里是一些APP的页面截图和下位机的实物图。
 
 ##### 2.1.3.1 支持向量机
 
-![image-20220829092724350](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829092724350.png)
+![image-20220829092724350](README.assets/image-20220829092724350.png)
 
 左转头的识别率较低，易与右转头混淆， 其余动作都达到90%以上。最后经过计算，基于 linear 核函数的 SVM 算法对八个动作的平均识别率达 95.70%。
 
 ##### 2.1.3.2 全连接神经网络
 
-![image-20220829092804181](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829092804181.png)
+![image-20220829092804181](README.assets/image-20220829092804181.png)
 
 仰准确率较低，只有84.66%，左转准确率最低，只有50.74%，其余动作准确率都在90%以上，其中后仰易于低头混淆，左转易于右转混淆。最后经过计算，全连接神经网络算法对八个动作的平均识别率达 89.22%。神经网络表现不好的原因猜测是数据集过小。
 
 ##### 2.1.3.3 随机森林
 
-![image-20220829092818078](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829092818078.png)
+![image-20220829092818078](README.assets/image-20220829092818078.png)
 
 8种动作准确率均保持在98%以上，最后经过计算，随机森林算法对八个动作的平均识别率达 99.54%。
 
@@ -160,11 +160,11 @@ image文件夹里是一些APP的页面截图和下位机的实物图。
 
 将每个决策树图形化输出，用c语言描述每个树的结构，统计每个树的输出结果，并以输出动作类型次数最多的动作作为整体输出。如图为其中一棵决策树的结构。
 
-![image-20220829093056839](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829093056839.png)
+![image-20220829093056839](README.assets/image-20220829093056839.png)
 
 > 综上所述，STM32的数据变化流程图如图所示
 >
-> ![image-20220829093259876](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829093259876.png)
+> ![image-20220829093259876](README.assets/image-20220829093259876.png)
 
 #### 2.1.4 颈椎保护系统上位机设计
 
@@ -176,7 +176,7 @@ image文件夹里是一些APP的页面截图和下位机的实物图。
 
 上位机由个人中心，动作识别，数据统计三个功能页面组成，其整体结构图如图所示
 
-![image-20220829093400760](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829093400760.png)
+![image-20220829093400760](README.assets/image-20220829093400760.png)
 
 - **个人中心**
 
@@ -190,7 +190,7 @@ image文件夹里是一些APP的页面截图和下位机的实物图。
 
 数据统计页面可显示历史统计记录，通过当天的有效动作次数评估颈椎病风险并给出建议。评估方案如表格所示。
 
-![image-20220829093458471](C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\image-20220829093458471.png)
+![image-20220829093458471](README.assets/image-20220829093458471.png)
 
 ##### 2.1.4.3 系统使用页面
 
