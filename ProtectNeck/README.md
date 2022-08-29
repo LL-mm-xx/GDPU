@@ -202,7 +202,7 @@ image文件夹里是一些APP的页面截图和下位机的实物图。
 
 ### 2.2.1 测试结果
 
-<img src="C:\Users\19457\Desktop\GDPU\ProtectNeck\README.assets\APP动作识别页面.jpg" alt="APP动作识别页面" style="zoom:50%;" />
+![image-20220829084356999](README.assets/image-20220829084356999.png)
 
 ### 2.2.2 结果分析
 
